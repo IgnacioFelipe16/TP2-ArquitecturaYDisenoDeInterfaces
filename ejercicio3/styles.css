@@ -1,0 +1,51 @@
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+.toast {
+    visibility: hidden;
+    min-width: 200px;
+    margin-left: -125px;
+    background-color: #414145;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+.toast-icon {
+    display: none;
+    margin-right: 10px;
+}
+.toast-text {
+    display: inline;
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@media (max-width: 600px) {
+    .toast-icon {
+        display: inline;
+    }
+    .toast-text {
+        display: none;
+    }
+}
